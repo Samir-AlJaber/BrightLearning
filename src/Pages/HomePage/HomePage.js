@@ -4,6 +4,17 @@ import "./HomePage.css";
 const HomePage = () => {
   return (
     <div className="main">
+      <nav className="navbar">
+        <div className="navbar-logo">Bright Learning</div>
+        <div className="navbar-links">
+          <button>About</button>
+          <button>Courses</button>
+          <button>Contact</button>
+          <button className="signup">Sign Up</button>
+          <button className="login">Log In</button>
+        </div>
+      </nav>
+
       <section className="style">
         <h1>Bright Learning – Guidance for Students</h1>
         <p>
