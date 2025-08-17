@@ -7,6 +7,57 @@
   line-height: 1.6;
 }
 
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #04205b, #3c91bc);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  color: #e0f2fe;
+}
+
+.navbar-btn button {
+  background-color: white;
+  color: #2563eb;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-btn button:hover {
+  background-color: #1e293b;
+  color: white;
+  transform: translateY(-2px);
+}
+
 .style {
   text-align: center;
   padding: 5rem 2rem;
