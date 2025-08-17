@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="main">
       <nav className="navbar">
@@ -10,8 +13,13 @@ const HomePage = () => {
           <button>About</button>
           <button>Courses</button>
           <button>Contact</button>
-          <button className="signup">Sign Up</button>
-          <button className="login">Log In</button>
+          
+          <button className="navbar-btn.signup-link" onClick={() => navigate("/signup")}>
+            Sign Up
+          </button>
+
+          <button>Log In</button>
+          
         </div>
       </nav>
 
