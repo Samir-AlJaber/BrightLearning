@@ -4,14 +4,13 @@ import HomePage from "./Pages/HomePage/HomePage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import SignUpPage from "./Pages/signup/signup";
 
-function App() 
-{
+function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignUpPage />} /> {}
+        <Route path="/signup" element={<SignUpPage />} /> 
       </Routes>
     </Router>
   );

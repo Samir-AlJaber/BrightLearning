@@ -62,8 +62,10 @@ const SignUpPage = () => {
           />
           <button type="submit" className="signup-btn">Sign Up</button>
         </form>
-        <p>
-          Already have an account?Log In 
+        <p className="login-link">
+          Already have an account? <button className="navbar-btn.login-link" onClick={() => navigate("/login")}>
+            Log In
+          </button>
         </p>
       </div>
     </div>

@@ -13,13 +13,12 @@ const HomePage = () => {
           <button>About</button>
           <button>Courses</button>
           <button>Contact</button>
-          
           <button className="navbar-btn.signup-link" onClick={() => navigate("/signup")}>
             Sign Up
           </button>
-
-          <button>Log In</button>
-          
+          <button className="navbar-btn.login-link" onClick={() => navigate("/login")}>
+            Log In
+          </button>
         </div>
       </nav>
 
@@ -28,13 +27,11 @@ const HomePage = () => {
         <p>
           Discover tailored lessons for your classes and empower your academic journey with expert resources.
         </p>
-
         <div className="class-btn">
-          <button className="class68-btn " onClick={() => navigate("/signup")}>Class 6-8</button>
+          <button className="class68-btn" onClick={() => navigate("/signup")}>Class 6-8</button>
           <button className="class910-btn" onClick={() => navigate("/signup")}>Class 9-10</button>
           <button className="class1112-btn" onClick={() => navigate("/signup")}>Class 11-12</button>
         </div>
-
       </section>
 
       <section className="topics">
