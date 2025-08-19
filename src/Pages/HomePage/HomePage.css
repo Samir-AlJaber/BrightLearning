@@ -30,51 +30,6 @@
   gap: 1.5rem;
 }
 
-.navbar-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out;
-}
-
-.navbar-links a:hover {
-  color: #e0f2fe;
-}
-
-.navbar-btn button {
-  background-color: white;
-  color: #2563eb;
-  border: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar-btn button:hover {
-  background-color: #1e293b;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.navbar-btn.login-link {
-  background-color: white;
-  color: #2563eb;
-  border: none;
-  padding: 0.6rem 1.4rem;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-.navbar-btn.login-link:hover {
-  background-color: #1e293b;
-  color: white;
-  transform: translateY(-2px);
-}
-
 .style {
   text-align: center;
   padding: 5rem 2rem;
@@ -93,6 +48,7 @@
   margin-bottom: 2rem;
   opacity: 0.9;
 }
+
 .class-btn button {
   padding: 0.8rem 1.8rem;
   margin: 0.5rem;
@@ -107,6 +63,25 @@
 }
 
 .class-btn button:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.class-btn1 button {
+  padding: 0.4rem .9rem;
+  margin: 0.5rem;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: white;
+  color: #2563eb;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.class-btn1 button:hover {
   background-color: #1e293b;
   color: #ffffff;
   transform: translateY(-3px);
@@ -233,10 +208,6 @@
 
 .socials span:hover {
   transform: scale(1.2);
-}
-.navbar-links .nav-link-button {
-  display: inline-block; /* or flex if needed */
-  text-decoration: none;
 }
 
 .footer p {
