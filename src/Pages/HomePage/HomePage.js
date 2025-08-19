@@ -9,14 +9,14 @@ const HomePage = () => {
     <div className="main">
       <nav className="navbar">
         <div className="navbar-logo">Bright Learning</div>
-        <div className="navbar-links">
+        <div className="class-btn1">
           <button>About</button>
           <button>Courses</button>
           <button>Contact</button>
-          <button className="navbar-btn.signup-link" onClick={() => navigate("/signup")}>
+          <button onClick={() => navigate("/signup")}>
             Sign Up
           </button>
-          <button className="navbar-btn.login-link" onClick={() => navigate("/login")}>
+          <button onClick={() => navigate("/login")}>
             Log In
           </button>
         </div>
@@ -28,9 +28,9 @@ const HomePage = () => {
           Discover tailored lessons for your classes and empower your academic journey with expert resources.
         </p>
         <div className="class-btn">
-          <button className="class68-btn" onClick={() => navigate("/signup")}>Class 6-8</button>
-          <button className="class910-btn" onClick={() => navigate("/signup")}>Class 9-10</button>
-          <button className="class1112-btn" onClick={() => navigate("/signup")}>Class 11-12</button>
+          <button onClick={() => navigate("/signup")}>Class 6-8</button>
+          <button onClick={() => navigate("/signup")}>Class 9-10</button>
+          <button onClick={() => navigate("/signup")}>Class 11-12</button>
         </div>
       </section>
 
