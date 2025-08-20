@@ -37,10 +37,10 @@ const HomePage = () => {
       <section className="topics">
         <h2>Courses & Topics</h2>
         <h3>Start your journey, strengthen your foundation</h3>
-        <p>
+        <h4>
           Bright Learning provides complete guidance with video tutorials, downloadable notes, 
           and one-to-one doubt solving.
-        </p>
+        </h4>
         <div className="topic-select">
           <div className="select">
             <h4>Explore Topics</h4>
@@ -48,7 +48,7 @@ const HomePage = () => {
               Browse your subjects and find structured notes and tutorials crafted for your class.
             </p>
           </div>
-          <div className="select highlight">
+          <div className="select">
             <h4>Need Help?</h4>
             <p>
               Connect with admins through our integrated Q&A system. Get timely answers and stay ahead.
@@ -65,9 +65,9 @@ const HomePage = () => {
 
       <section className="final-btn">
         <h2>Ready to Expand Your Learning?</h2>
-        <p>
+        <h4>
           Join Bright Learning today and unlock a world of knowledge. Stay motivated and never stop learning.
-        </p>
+        </h4>
         <button className="start-btn" onClick={() => navigate("/signup")}>Start Now 🚀</button>
       </section>
 

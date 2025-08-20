@@ -106,7 +106,7 @@
   color: #475569;
 }
 
-.topics p {
+.topics h4 {
   max-width: 700px;
   margin: 0 auto 2rem auto;
   color: #64748b;
@@ -130,11 +130,8 @@
 }
 
 .select:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.highlight {
   border: 2px solid #2563eb;
 }
 
@@ -150,8 +147,8 @@
   margin-bottom: 1rem;
 }
 
-.final-btn p {
-  font-size: 1.2rem;
+.final-btn h4 {
+  font-size: 1.1rem;
   margin-bottom: 2rem;
   opacity: 0.9;
 }

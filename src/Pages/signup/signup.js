@@ -26,7 +26,7 @@ const SignUpPage = () => {
     <div className="signup-container">
       <div className="signup-box">
         <h2>Create an Account</h2>
-        <p>Join Bright Learning and start your journey today.</p>
+        <h6>Join Bright Learning and start your journey today.</h6>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
