@@ -27,6 +27,13 @@ const LoginPage = () => {
             Sign Up
           </button>
         </p>
+
+        <button
+          className="home-nav-btn"
+          onClick={() => navigate("/")}
+        >
+          ⬅ Back to Home
+        </button>
       </div>
     </div>
   );
