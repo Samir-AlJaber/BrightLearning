@@ -1,7 +1,11 @@
 import React from "react";
 import "./ContactPage.css";
+import { useNavigate } from "react-router-dom";
 
 const ContactPage = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="contact-page">
 
@@ -35,6 +39,15 @@ const ContactPage = () => {
           <p>Phone: +880 555666777</p>
         </div>
       </section>
+
+      <div>
+        <button
+          className="home-nav-btn"
+          onClick={() => navigate("/")}
+        >
+          ⬅ Back to Home
+        </button>
+      </div>
 
       <footer className="contact-footer">
         <div className="footer-content">
