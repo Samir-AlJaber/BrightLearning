@@ -76,7 +76,11 @@ const HomePage = () => {
           <a onClick={() => navigate("/courses")} style={{ cursor: "pointer" }}>
             Courses
           </a>
-          <a href="#contact">Contact</a>
+          
+          <a onClick={() => navigate("/contact")} style={{ cursor: "pointer" }}>
+            Contact
+            </a>
+
         </div>
         <div className="socials">
           <span role="img" aria-label="website">🌐</span>
