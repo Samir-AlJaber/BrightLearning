@@ -35,6 +35,15 @@
   transition: transform 0.3s ease;
 }
 
+.team-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 3px solid #2575fc;
+}
+
 .team-card h3 {
   margin-bottom: 8px;
   color: #333;
