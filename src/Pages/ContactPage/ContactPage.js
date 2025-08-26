@@ -1,6 +1,10 @@
 import React from "react";
 import "./ContactPage.css";
 import { useNavigate } from "react-router-dom";
+import samirPic from "../../Images/Samir.jpg";
+import tanimPic from "../../Images/Tanim.jpg";
+import fahimPic from "../../Images/Fahim.jpg";
+
 
 const ContactPage = () => {
 
@@ -16,7 +20,7 @@ const ContactPage = () => {
 
       <section className="team-section">
         <div className="team-card">
-          <img src="" alt="Samir" />
+          <img src={samirPic} alt="Samir" />
           <h3>Samir</h3>
           <p>Project Leader</p>
           <p>Email: samir@example.com</p>
@@ -24,7 +28,7 @@ const ContactPage = () => {
         </div>
 
         <div className="team-card">
-          <img src="" alt="Tanim" />
+          <img src={tanimPic} alt="Tanim" />
           <h3>Tanim</h3>
           <p>Senior Developer - 1</p>
           <p>Email: tanim@example.com</p>
@@ -32,7 +36,7 @@ const ContactPage = () => {
         </div>
 
         <div className="team-card">
-          <img src="" alt="Fahim" />
+          <img src={fahimPic} alt="Fahim" />
           <h3>Fahim</h3>
           <p>Senior Developer - 2</p>
           <p>Email: fahim@example.com</p>
