@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 import "./Courses.css";
-
 const data = {
   6: {
     English: "Reading comprehension; basic grammar; paragraph writing.",
@@ -25,11 +25,18 @@ const data = {
 function Courses() {
   const [selectedClass, setSelectedClass] = useState(6);
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate();  
   return (
     <div className="class-container">
+      <div style={{ textAlign: "left", marginBottom: "1rem" }}>
+        <button
+          className="home-nav-btn"
+          onClick={() => navigate("/")}
+        >
+          ⬅ Back to Home
+        </button>
+      </div>
       <h1>Course Descriptions (Class 6–8)</h1>
-
       <div className={`dropdown ${open ? "open" : ""}`}>
         <button
           className="dropdown-toggle"
@@ -38,7 +45,6 @@ function Courses() {
         >
           Select Class {selectedClass} ▼
         </button>
-
         <div className="dropdown-menu" role="menu" aria-label="Choose class">
           {[6, 7, 8].map(cls => (
             <button
@@ -55,12 +61,10 @@ function Courses() {
           ))}
         </div>
       </div>
-
       <section id="activeClass" className="active-class">
         <h2>Class {selectedClass}</h2>
         <p>Course descriptions for core subjects:</p>
       </section>
-
       <section className="subjects-grid">
         {Object.entries(data[selectedClass]).map(([subject, desc]) => (
           <div key={subject} className="card">
@@ -73,4 +77,4 @@ function Courses() {
   );
 }
 
-export default Courses; // ✅ default export
+export default Courses;
