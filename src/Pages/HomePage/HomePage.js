@@ -76,7 +76,6 @@ const HomePage = () => {
           <a onClick={() => navigate("/courses")} style={{ cursor: "pointer" }}>
             Courses
           </a>
-          
           <a onClick={() => navigate("/contact")} style={{ cursor: "pointer" }}>
             Contact
             </a>
