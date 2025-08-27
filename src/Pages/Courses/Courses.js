@@ -28,13 +28,13 @@ function Courses() {
   const navigate = useNavigate();  
   return (
     <div className="class-container">
-      <div style={{ textAlign: "left", marginBottom: "1rem" }}>
+      <div style={{ position: "absolute", top: "20px", left: "20px" }}>
         <button
-          className="home-nav-btn"
-          onClick={() => navigate("/")}
+        className="home-nav-btn"
+        onClick={() => navigate("/")}
         >
-          ⬅ Back to Home
-        </button>
+           ⬅ Back to Home
+           </button>
       </div>
       <h1>Course Descriptions (Class 6–8)</h1>
       <div className={`dropdown ${open ? "open" : ""}`}>
