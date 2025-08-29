@@ -22,7 +22,6 @@
   font-size: 1.15rem;
   opacity: 0.95;
 }
-
 .about-cta {
   display: flex;
   gap: 0.8rem;
@@ -91,4 +90,138 @@
 .value-card .icon {
   font-size: 1.6rem;
   margin-bottom: 0.6rem;
+}
+
+.about-story {
+  padding: 3.5rem 2rem 2.5rem 2rem;
+  background: #ffffff;
+}
+.story-card {
+  max-width: 950px;
+  margin: 0 auto 1.8rem auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.6rem 1.8rem;
+  border: 1px solid #e2e8f0;
+}
+.story-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  max-width: 950px;
+  margin: 0 auto;
+}
+.stat {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat .num {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.stat .lbl {
+  opacity: 0.95;
+}
+
+.about-teachers {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+.about-teachers h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.teacher-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1000px;
+  margin: 1.4rem auto 0 auto;
+}
+.teacher-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+.teacher-card .avatar {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+.teacher-card h4 {
+  margin: 0.2rem 0;
+}
+
+.about-faq {
+  padding: 3.5rem 2rem;
+  background: #ffffff;
+}
+.about-faq h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.faq-list details {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #e2e8f0;
+}
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #0f172a;
+}
+.faq-list p {
+  color: #475569;
+  margin-top: 0.6rem;
+}
+
+.about-final {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+}
+.about-final h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.about-final p {
+  font-size: 1.05rem;
+  margin-bottom: 1.3rem;
+  opacity: 0.95;
+}
+.start-btn {
+  background-color: white;
+  color: #2563eb;
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.start-btn:hover {
+  background-color: #1e293b;
+  color: white;
+  transform: translateY(-2px);
 }
