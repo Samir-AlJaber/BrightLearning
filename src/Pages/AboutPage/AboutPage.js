@@ -61,6 +61,62 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      <section className="about-story">
+        <div className="story-card">
+          <h2>Our Story</h2>
+          <p>
+            Many students, even with good resources, fail to master concepts due
+            to lack of proper guidance. Bright Learning solves this — with
+            classes, notes, and doubt support all in one place so that learning
+            becomes structured and stress-free.
+          </p>
+        </div>
+
+        <div className="stats-strip">
+          <div className="stat">
+            <span className="num">20k+</span>
+            <span className="lbl">Students</span>
+          </div>
+          <div className="stat">
+            <span className="num">4.8★</span>
+            <span className="lbl">Average Rating</span>
+          </div>
+          <div className="stat">
+            <span className="num">10+</span>
+            <span className="lbl">Subjects</span>
+          </div>
+          <div className="stat">
+            <span className="num">24/7</span>
+            <span className="lbl">Access</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-teachers">
+        <h2>Meet the Teachers</h2>
+        <p className="about-sub">
+          Experienced faculty — clear concepts and exam-focused techniques.
+        </p>
+
+        <div className="teacher-grid">
+          <div className="teacher-card">
+            <div className="avatar" aria-hidden>👩‍🏫</div>
+            <h4>Tanim Mohammed Khan</h4>
+            <p>Mathematics • 8+ yrs experience</p>
+          </div>
+          <div className="teacher-card">
+            <div className="avatar" aria-hidden>👨‍🏫</div>
+            <h4>Samir Al Jaber</h4>
+            <p>Physics • 7+ yrs experience</p>
+          </div>
+          <div className="teacher-card">
+            <div className="avatar" aria-hidden>🧑‍🏫</div>
+            <h4>Fahim Raiyan Ahmed</h4>
+            <p>Chemistry • 6+ yrs experience</p>
+          </div>
+        </div>
+      </section>
+
      </div> 
    );
   }; 
