@@ -9,7 +9,7 @@ const HomePage = () => {
       <nav className="navbar">
         <div className="navbar-logo">Bright Learning</div>
         <div className="class-btn1">
-          <button>About</button>
+          <button onClick={() => navigate("/about")}>About</button>
           <button onClick={() => navigate("/courses")}>Courses</button>
           <button onClick={() => navigate("/contact")}>Contact</button>
           <button onClick={() => navigate("/signup")}>Sign Up</button>
@@ -72,7 +72,10 @@ const HomePage = () => {
       </section>
       <footer className="footer">
         <div className="footer-links">
-          <a href="#about">About</a>
+          <a onClick={() => navigate("/about")}
+            style={{ cursor: "pointer" }}>
+            About
+          </a>
           <a onClick={() => navigate("/courses")} style={{ cursor: "pointer" }}>
             Courses
           </a>
