@@ -61,6 +61,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+
       <section className="about-story">
         <div className="story-card">
           <h2>Our Story</h2>
@@ -117,8 +118,41 @@ const AboutPage = () => {
         </div>
       </section>
 
-     </div> 
-   );
-  }; 
+      <section className="about-faq">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-list">
+          <details>
+            <summary>Are these courses aligned with my board?</summary>
+            <p>
+              Yes, our content is structured according to CBSE/ICSE/State board
+              syllabi.
+            </p>
+          </details>
+          <details>
+            <summary>Can I download and print the notes?</summary>
+            <p>
+              All notes are provided in PDF format — downloadable and printable.
+            </p>
+          </details>
+          <details>
+            <summary>How quickly will I get an answer to my doubts?</summary>
+            <p>
+              Subject experts usually respond within 6–12 hours.
+            </p>
+          </details>
+        </div>
+      </section>
 
- export default AboutPage;     
+      
+      <section className="about-final">
+        <h2>Ready to begin?</h2>
+        <p>Create a free account today and start your classes.</p>
+        <button className="start-btn" onClick={() => navigate("/signup")}>
+          Start Now 🚀
+        </button>
+      </section>
+    </div>
+  );
+};
+
+export default AboutPage;
