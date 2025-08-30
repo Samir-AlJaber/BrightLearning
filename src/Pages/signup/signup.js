@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
 
 const SignUpPage = () => {
-
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -17,9 +17,16 @@ const SignUpPage = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted: ", formData);
+    try {
+      const res = await api.post("/auth/signup", formData);
+      alert("Signup successful!");
+      console.log("User:", res.data.user);
+      navigate("/login");
+    } catch (err) {
+      alert(err.response?.data?.message || "Signup failed");
+    }
   };
 
   return (
@@ -63,15 +70,9 @@ const SignUpPage = () => {
           <button type="submit" className="signup-btn">Sign Up</button>
         </form>
         <p className="login-link">
-          Already have an account? <button onClick={() => navigate("/login")}>
-            Log In
-          </button>
+          Already have an account? <button onClick={() => navigate("/login")}>Log In</button>
         </p>
-
-        <button
-          className="home-nav-btn"
-          onClick={() => navigate("/")}
-        >
+        <button className="home-nav-btn" onClick={() => navigate("/")}>
           ⬅ Back to Home
         </button>
       </div>
