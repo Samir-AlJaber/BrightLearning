@@ -18,7 +18,7 @@ const AboutPage = () => {
           </p>
           <div className="about-cta">
             <button onClick={() => navigate("/courses")}>Browse Courses</button>
-            <button onClick={() => navigate("/signup")} className="ghost">
+            <button onClick={() => navigate("/signup")}>
               Create Free Account
             </button>
           </div>

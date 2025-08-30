@@ -44,16 +44,6 @@
   background: #1e293b;
   color: #ffffff;
 }
-.about-cta .ghost {
-  background: transparent;
-  color: #ffffff;
-  border: 2px solid rgba(255,255,255,0.9);
-}
-.about-cta .ghost:hover {
-  background: #ffffff;
-  color: #2563eb;
-}
-
 
 .about-values {
   padding: 4rem 2rem;
