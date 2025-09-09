@@ -15,32 +15,32 @@ const ContactPage = () => {
 
       <header className="contact-header">
         <h1>Meet Our Team</h1>
-        <p>We are here to guide and support you in your learning journey.</p>
+        <h4>We are here to guide and support you in your learning journey.</h4>
       </header>
 
       <section className="team-section">
         <div className="team-card">
           <img src={samirPic} alt="Samir" />
-          <h3>Samir</h3>
-          <p>Project Leader</p>
-          <p>Email: samir@example.com</p>
-          <p>Phone: +880 123456789</p>
+          <h3>Samir Al Zaber</h3>
+          <h4>Project Leader</h4>
+          <h4>Email: samir.cse.20230104136@aust.edu</h4>
+          <h4>Phone: +880 1927266998</h4>
         </div>
 
         <div className="team-card">
           <img src={tanimPic} alt="Tanim" />
-          <h3>Tanim</h3>
-          <p>Senior Developer - 1</p>
-          <p>Email: tanim@example.com</p>
-          <p>Phone: +880 987654321</p>
+          <h3>Tanim Mohammed Khan</h3>
+          <h4>Senior Developer - 1</h4>
+          <h4>Email: tanim.cse.20230104137@aust.edu</h4>
+          <h4>Phone: +880 1521745378</h4>
         </div>
 
         <div className="team-card">
           <img src={fahimPic} alt="Fahim" />
-          <h3>Fahim</h3>
-          <p>Senior Developer - 2</p>
-          <p>Email: fahim@example.com</p>
-          <p>Phone: +880 555666777</p>
+          <h3>Fahim Raiyan Ahmed</h3>
+          <h4>Senior Developer - 2</h4>
+          <h4>Email: fahim.cse.20220204098@aust.edu</h4>
+          <h4>Phone: +880 1851500036</h4>
         </div>
       </section>
 

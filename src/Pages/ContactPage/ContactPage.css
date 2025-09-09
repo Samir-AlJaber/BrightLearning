@@ -20,7 +20,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  margin: 40px auto;
+  margin: 110px auto 40px auto;
   width: 90%;
   max-width: 1200px;
 }
@@ -33,6 +33,11 @@
   width: 280px;
   text-align: center;
   transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border: 2px solid #2563eb;
 }
 
 .team-card img {
@@ -49,7 +54,7 @@
   color: #333;
 }
 
-.team-card p {
+.team-card h5 {
   margin: 4px 0;
   color: #555;
 }
