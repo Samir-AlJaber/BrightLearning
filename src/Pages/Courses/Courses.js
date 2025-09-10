@@ -30,15 +30,6 @@ function Courses() {
 
   return (
     <div className="class-container">
-      <div style={{ position: "absolute", top: "20px", left: "20px" }}>
-        <button
-          className="home-nav-btn"
-          onClick={() => navigate("/")}
-        >
-           ⬅ Back to Home
-        </button>
-      </div>
-
       <h1>Course Descriptions (Class 6–8)</h1>
 
       <div className={`dropdown ${open ? "open" : ""}`}>
@@ -79,7 +70,14 @@ function Courses() {
           </div>
         ))}
       </section>
-
+       <div className="home-btn-container">
+      <button
+       className="home-nav-btn"
+       onClick={() => navigate("/")}
+      >
+      ⬅ Back to Home
+      </button>
+    </div>
       <footer className="courses-footer">
         <div className="footer-content">
           <h4>Bright Learning</h4>
@@ -91,5 +89,4 @@ function Courses() {
     </div>
   );
 }
-
 export default Courses;
