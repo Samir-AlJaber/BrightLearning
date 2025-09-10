@@ -1,12 +1,10 @@
 .class-container {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: navy;                
-  background-color: white;    
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  line-height: 1.6;
+  color: navy;
+  background-color: white;
+  min-height: 100vh;        
+  display: flex;           
+  flex-direction: column;   
 }
 
 .class-container h1 {
@@ -110,4 +108,24 @@
   font-size: 0.95rem;
   margin: 0;
   line-height: 1.5;
+}
+.courses-footer {
+  margin-top: auto;
+  background: black;
+  color: silver;
+  text-align: center;
+  padding: 30px 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.courses-footer h4 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.courses-footer p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: white;
 }
