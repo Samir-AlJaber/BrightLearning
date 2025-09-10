@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "./Courses.css";
+
 const data = {
   6: {
     English: "Reading comprehension; basic grammar; paragraph writing.",
@@ -26,17 +27,20 @@ function Courses() {
   const [selectedClass, setSelectedClass] = useState(6);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();  
+
   return (
     <div className="class-container">
       <div style={{ position: "absolute", top: "20px", left: "20px" }}>
         <button
-        className="home-nav-btn"
-        onClick={() => navigate("/")}
+          className="home-nav-btn"
+          onClick={() => navigate("/")}
         >
            ⬅ Back to Home
-           </button>
+        </button>
       </div>
+
       <h1>Course Descriptions (Class 6–8)</h1>
+
       <div className={`dropdown ${open ? "open" : ""}`}>
         <button
           className="dropdown-toggle"
@@ -61,10 +65,12 @@ function Courses() {
           ))}
         </div>
       </div>
+
       <section id="activeClass" className="active-class">
         <h2>Class {selectedClass}</h2>
         <p>Course descriptions for core subjects:</p>
       </section>
+
       <section className="subjects-grid">
         {Object.entries(data[selectedClass]).map(([subject, desc]) => (
           <div key={subject} className="card">
@@ -73,6 +79,15 @@ function Courses() {
           </div>
         ))}
       </section>
+
+      <footer className="courses-footer">
+        <div className="footer-content">
+          <h4>Bright Learning</h4>
+          <p>Smart courses for students with clear notes and guidance.</p>
+          <p>© 2025 Bright Learning. All rights reserved.</p>
+        </div>
+      </footer>
+
     </div>
   );
 }
