@@ -1,5 +1,5 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./AboutPage.css";
 
 const AboutPage = () => {
@@ -25,7 +25,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      
       <section className="about-values">
         <h2>How Learning Works</h2>
         <p className="about-sub">
@@ -56,7 +55,7 @@ const AboutPage = () => {
             <h3>Exam Aligned</h3>
             <p>
               Coverage and revision plans aligned with CBSE/ICSE/State board
-              syllabi.
+              syllabus.
             </p>
           </div>
         </div>
@@ -101,17 +100,14 @@ const AboutPage = () => {
 
         <div className="teacher-grid">
           <div className="teacher-card">
-            <div className="avatar" aria-hidden>👩‍🏫</div>
             <h4>Tanim Mohammed Khan</h4>
             <p>Mathematics • 8+ yrs experience</p>
           </div>
           <div className="teacher-card">
-            <div className="avatar" aria-hidden>👨‍🏫</div>
             <h4>Samir Al Jaber</h4>
             <p>Physics • 7+ yrs experience</p>
           </div>
           <div className="teacher-card">
-            <div className="avatar" aria-hidden>🧑‍🏫</div>
             <h4>Fahim Raiyan Ahmed</h4>
             <p>Chemistry • 6+ yrs experience</p>
           </div>
@@ -125,7 +121,7 @@ const AboutPage = () => {
             <summary>Are these courses aligned with my board?</summary>
             <p>
               Yes, our content is structured according to CBSE/ICSE/State board
-              syllabi.
+              syllabus.
             </p>
           </details>
           <details>
@@ -141,9 +137,17 @@ const AboutPage = () => {
             </p>
           </details>
         </div>
+
+        <div>
+          <button
+            className="home-nav-btn"
+            onClick={() => navigate("/")}
+          >
+            ⬅ Back to Home
+          </button>
+        </div>
       </section>
 
-      
       <section className="about-final">
         <h2>Ready to begin?</h2>
         <p>Create a free account today and start your classes.</p>
