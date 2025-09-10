@@ -21,6 +21,7 @@ const AboutPage = () => {
             <button onClick={() => navigate("/signup")}>
               Create Free Account
             </button>
+            <button onClick={() => navigate("/contact")}>Contact Admin</button>
           </div>
         </div>
       </section>
@@ -55,7 +56,7 @@ const AboutPage = () => {
             <h3>Exam Aligned</h3>
             <p>
               Coverage and revision plans aligned with CBSE/ICSE/State board
-              syllabus.
+              syllabi.
             </p>
           </div>
         </div>
@@ -121,7 +122,7 @@ const AboutPage = () => {
             <summary>Are these courses aligned with my board?</summary>
             <p>
               Yes, our content is structured according to CBSE/ICSE/State board
-              syllabus.
+              syllabi.
             </p>
           </details>
           <details>
