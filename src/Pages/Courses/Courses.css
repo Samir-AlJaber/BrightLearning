@@ -6,22 +6,24 @@
   display: flex;           
   flex-direction: column;   
 }
-
 .class-container h1 {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: midnightblue;       
 }
-
+.dropdown-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 2rem;           
+  margin-bottom: 2rem;
+}
 
 .dropdown {
   position: relative;
   display: inline-block;
-  margin: 1rem 0 2rem;
 }
-
 .dropdown-toggle {
   background: linear-gradient(135deg, royalblue, deepskyblue); 
   color: white;
@@ -32,6 +34,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  width: 180px; 
 }
 
 .dropdown-toggle:hover {
@@ -48,6 +51,7 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
   z-index: 10;
+  width: 180px;
 }
 
 .dropdown.open .dropdown-menu { display: block; }
@@ -60,9 +64,10 @@
   color: royalblue;            
   font-weight: 600;
   cursor: pointer;
-  text-align: center;
+  text-align: left;
   border-radius: 8px;
   transition: all 0.2s ease-in-out;
+  width: 100%;
 }
 .menu-item:hover {
   background: whitesmoke;     
@@ -126,12 +131,10 @@
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
-
 .courses-footer h4 {
   margin-bottom: 10px;
   color: white;
 }
-
 .courses-footer p {
   margin: 4px 0;
   font-size: 0.9rem;
