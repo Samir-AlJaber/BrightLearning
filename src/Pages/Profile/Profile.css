@@ -1,10 +1,8 @@
-.main {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #1e293b;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  line-height: 1.6;
+.profile-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .navbar {
@@ -25,145 +23,77 @@
   letter-spacing: 1px;
 }
 
-.class-btn1 button {
-  padding: 0.4rem .9rem;
-  margin: 0.5rem;
-  font-size: 0.8rem;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  background-color: white;
-  color: #2563eb;
-  font-weight: 700;
-  transition: all 0.3s ease-in-out;
-}
-
-.class-btn1 button:hover {
-  background-color: #1e293b;
-  color: #ffffff;
-  transform: translateY(-3px);
-}
-
-.style {
-  text-align: center;
-  padding: 5rem 2rem;
-  background: linear-gradient(135deg, #2563eb, #38bdf8);
-  color: white;
-}
-
-.style h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.style p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-.class-btn button {
-  padding: 0.8rem 1.8rem;
-  margin: 0.5rem;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  background-color: white;
-  color: #2563eb;
-  font-weight: 600;
-  transition: all 0.3s ease-in-out;
-}
-
-.class-btn button:hover {
-  background-color: #1e293b;
-  color: #ffffff;
-  transform: translateY(-3px);
-}
-
-.topics {
-  padding: 4rem 2rem;
-  text-align: center;
-  background-color: #f8fafc;
-}
-
-.topics h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #0f172a;
-}
-
-.topics h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
-  color: #475569;
-}
-
-.topics h4 {
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-  color: #64748b;
-}
-
-.topic-select {
+.navbar-links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-.select {
-  max-width: 300px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: left;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+.navbar-links button {
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: white;
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.3s ease-in-out;
 }
 
-.select:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.navbar-links button:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.profile-main {
+  flex: 1;
+  padding: 3rem 2rem;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.profile-main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.sub-text {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.profile-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
   border: 2px solid #2563eb;
 }
 
-.final-btn {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #38bdf8, #2563eb);
-  color: white;
-}
-
-.final-btn h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.final-btn h4 {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-.start-btn {
-  background-color: white;
+.profile-card h3 {
+  margin-bottom: 0.6rem;
   color: #2563eb;
-  padding: 0.9rem 2.2rem;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  font-size: 1.1rem;
 }
 
-.start-btn:hover {
-  background-color: #1e293b;
-  color: white;
-  transform: scale(1.05);
+.profile-card p {
+  font-size: 0.95rem;
+  color: #334155;
 }
 
 .footer {

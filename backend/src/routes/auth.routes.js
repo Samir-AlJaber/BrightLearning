@@ -13,6 +13,22 @@ function createToken(user) {
   );
 }
 
+function validatePassword(password) {
+  if (password.length < 6 || password.length > 14) {
+    return "Password must be between 6 and 14 characters";
+  }
+  if (!/[A-Z]/.test(password)) {
+    return "Password must contain at least one uppercase letter";
+  }
+  if (!/[a-z]/.test(password)) {
+    return "Password must contain at least one lowercase letter";
+  }
+  if (!/[0-9]/.test(password)) {
+    return "Password must contain at least one digit";
+  }
+  return null;
+}
+
 router.post("/signup", async (req, res) => {
   try {
     const { fullName, email, password, confirmPassword } = req.body;
@@ -22,6 +38,11 @@ router.post("/signup", async (req, res) => {
     }
     if (password !== confirmPassword) {
       return res.status(400).json({ message: "Passwords do not match" });
+    }
+
+    const validationError = validatePassword(password);
+    if (validationError) {
+      return res.status(400).json({ message: validationError });
     }
 
     const existingName = await User.findOne({ fullName: fullName.trim() });
@@ -47,11 +68,6 @@ router.post("/signup", async (req, res) => {
       user: { id: user._id, fullName: user.fullName, email: user.email }
     });
   } catch (err) {
-    if (err?.code === 11000) {
-      const field = Object.keys(err.keyPattern || {})[0];
-      const msg = field === "fullName" ? "Username already taken" : "Email already registered";
-      return res.status(409).json({ message: msg });
-    }
     return res.status(500).json({ message: "Signup failed" });
   }
 });
