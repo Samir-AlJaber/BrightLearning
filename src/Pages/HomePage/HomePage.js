@@ -41,8 +41,16 @@ const HomePage = () => {
         <h1>Bright Learning – Guidance for Students</h1>
         <p>Discover tailored lessons for your classes and empower your academic journey with expert resources.</p>
         <div className="class-btn">
-          <button onClick={() => navigate("/signup", { state: { from: location.pathname } })}>Class 9-10</button>
-          <button onClick={() => navigate("/signup", { state: { from: location.pathname } })}>Class 11-12</button>
+          <button
+            onClick={() => navigate("/courses", { state: { targetClass: "9to10" } })}
+          >
+            Class 9–10
+          </button>
+          <button
+            onClick={() => navigate("/courses", { state: { targetClass: "11to12" } })}
+          >
+            Class 11–12
+          </button>
         </div>
       </section>
 

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./Courses.css";
@@ -21,17 +21,25 @@ const data = {
 };
 
 function Courses9to12() {
-  const [selectedClass, setSelectedClass] = useState("9to10"); // default 9–10
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, logout } = useContext(AuthContext);
+
+  const [selectedClass, setSelectedClass] = useState("9to10");
+  const [open, setOpen] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+
+  useEffect(() => {
+    if (location.state?.targetClass) {
+      setSelectedClass(location.state.targetClass);
+    }
+  }, [location.state]);
 
   const handleLogout = () => {
     logout();
     setShowConfirm(false);
   };
+
   const classLabels = {
     "9to10": "Class 9 – 10",
     "11to12": "Class 11 – 12"
@@ -92,6 +100,7 @@ function Courses9to12() {
         <h2>{classLabels[selectedClass]}</h2>
         <p>Course descriptions for core subjects:</p>
       </section>
+
       <section className="subjects-grid">
         {Object.entries(data[selectedClass]).map(([subject, desc]) => (
           <div key={subject} className="card">
@@ -134,4 +143,5 @@ function Courses9to12() {
     </div>
   );
 }
+
 export default Courses9to12;
