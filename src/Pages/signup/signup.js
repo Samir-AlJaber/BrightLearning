@@ -15,13 +15,17 @@ const SignUpPage = () => {
 
   const from = location.state?.from;
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    if (name === "email") value = value.toLowerCase(); 
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMsg("");
 
-    const { password, confirmPassword } = formData;
+    const { email, password, confirmPassword } = formData;
 
     if (password !== confirmPassword) {
       setErrorMsg("Passwords do not match");
@@ -41,6 +45,14 @@ const SignUpPage = () => {
     }
     if (!/[0-9]/.test(password)) {
       setErrorMsg("Password must contain at least one digit");
+      return;
+    }
+    if (email !== email.toLowerCase()) {
+      setErrorMsg("Email must be in lowercase");
+      return;
+    }
+    if (!email.endsWith("@gmail.com")) {
+      setErrorMsg("Email must end with @gmail.com");
       return;
     }
 

@@ -29,6 +29,16 @@ function validatePassword(password) {
   return null;
 }
 
+function validateEmail(email) {
+  if (email !== email.toLowerCase()) {
+    return "Email must be in lowercase";
+  }
+  if (!email.endsWith("@gmail.com")) {
+    return "Email must end with @gmail.com";
+  }
+  return null;
+}
+
 router.post("/signup", async (req, res) => {
   try {
     const { fullName, email, password, confirmPassword } = req.body;
@@ -40,7 +50,7 @@ router.post("/signup", async (req, res) => {
       return res.status(400).json({ message: "Passwords do not match" });
     }
 
-    const validationError = validatePassword(password);
+    const validationError = validatePassword(password) || validateEmail(email);
     if (validationError) {
       return res.status(400).json({ message: validationError });
     }
