@@ -75,9 +75,22 @@ const HomePage = () => {
       </section>
 
       <section className="final-btn">
-        <h2>Ready to Expand Your Learning?</h2>
-        <h4>Join Bright Learning today and unlock a world of knowledge.</h4>
-        <button className="start-btn" onClick={() => navigate("/signup", { state: { from: location.pathname } })}>Start Now 🚀</button>
+        <h2>{user ? "Continue Your Learning" : "Ready to Expand Your Learning?"}</h2>
+        <h4>
+          {user
+            ? "Browse courses and keep improving your knowledge."
+            : "Join Bright Learning today and unlock a world of knowledge."}
+        </h4>
+        <button
+          className="start-btn"
+          onClick={() =>
+            user
+              ? navigate("/courses", { state: { from: location.pathname } })
+              : navigate("/signup", { state: { from: location.pathname } })
+          }
+        >
+          {user ? "Browse Courses 📚" : "Start Now 🚀"}
+        </button>
       </section>
 
       <footer className="footer">
