@@ -4,26 +4,24 @@ import { AuthContext } from "../../context/AuthContext";
 import "./Courses.css";
 
 const data = {
-  9: {
-    English: "Literature and advanced grammar, comprehension and essays.",
+  "9to10": {
     Math: "Algebra, geometry, trigonometry basics.",
     Physics: "Motion, force, energy, simple machines.",
     Chemistry: "Atoms, molecules, chemical reactions.",
     Biology: "Cells, tissues, human physiology.",
     ICT: "Databases, programming basics, HTML/CSS."
   },
-  10: {
-    English: "Advanced literature, essays, comprehension practice.",
-    Math: "Trigonometry, statistics, quadratic equations.",
-    Physics: "Light, sound, electricity, magnetism.",
-    Chemistry: "Periodic table, bonding, acids and bases.",
-    Biology: "Genetics, evolution, reproduction, environment.",
+  "11to12": {
+    Math: ["First Paper", "Second Paper"],
+    Physics: ["First Paper", "Second Paper"],
+    Chemistry: ["First Paper", "Second Paper"],
+    Biology: ["First Paper", "Second Paper"],
     ICT: "Advanced spreadsheets, programming (C basics), web design."
   }
 };
 
-function Courses9to10() {
-  const [selectedClass, setSelectedClass] = useState(9);
+function Courses9to12() {
+  const [selectedClass, setSelectedClass] = useState("9to10"); // default 9–10
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -33,6 +31,10 @@ function Courses9to10() {
   const handleLogout = () => {
     logout();
     setShowConfirm(false);
+  };
+  const classLabels = {
+    "9to10": "Class 9 – 10",
+    "11to12": "Class 11 – 12"
   };
 
   return (
@@ -58,14 +60,18 @@ function Courses9to10() {
         </div>
       </nav>
 
-      <h1>Course Descriptions (Class 9–10)</h1>
+      <h1>Course Descriptions (Class 9–12)</h1>
       <div className="dropdown-wrapper">
         <div className={`dropdown ${open ? "open" : ""}`}>
-          <button className="dropdown-toggle" onClick={() => setOpen(v => !v)} aria-expanded={open}>
-            Select Class {selectedClass} ▼
+          <button
+            className="dropdown-toggle"
+            onClick={() => setOpen(v => !v)}
+            aria-expanded={open}
+          >
+            {classLabels[selectedClass]} ▼
           </button>
           <div className="dropdown-menu" role="menu" aria-label="Choose class">
-            {[9, 10].map(cls => (
+            {Object.keys(classLabels).map(cls => (
               <button
                 key={cls}
                 className="menu-item"
@@ -75,7 +81,7 @@ function Courses9to10() {
                   setOpen(false);
                 }}
               >
-                Class {cls}
+                {classLabels[cls]}
               </button>
             ))}
           </div>
@@ -83,15 +89,24 @@ function Courses9to10() {
       </div>
 
       <section id="activeClass" className="active-class">
-        <h2>Class {selectedClass}</h2>
+        <h2>{classLabels[selectedClass]}</h2>
         <p>Course descriptions for core subjects:</p>
       </section>
-
       <section className="subjects-grid">
         {Object.entries(data[selectedClass]).map(([subject, desc]) => (
           <div key={subject} className="card">
             <h3>{subject}</h3>
-            <p>{desc}</p>
+            {Array.isArray(desc) ? (
+              <div className="papers-dropdown">
+                {desc.map((paper, idx) => (
+                  <button key={idx} className="paper-btn">
+                    ➤ {paper}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p>{desc}</p>
+            )}
           </div>
         ))}
       </section>
@@ -119,5 +134,4 @@ function Courses9to10() {
     </div>
   );
 }
-
-export default Courses9to10;
+export default Courses9to12;
