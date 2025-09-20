@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
+import { authMiddleware } from "./middleware/authMiddleware.js";
 
 const app = express();
 
@@ -20,5 +21,12 @@ app.use(express.json());
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
 app.use("/api/auth", authRoutes);
+
+app.get("/api/profile", authMiddleware, (req, res) => {
+  res.json({
+    message: `Welcome ${req.user.email}`,
+    user: req.user
+  });
+});
 
 export default app;
