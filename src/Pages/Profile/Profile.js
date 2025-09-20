@@ -1,17 +1,16 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { Navigate, useNavigate } from "react-router-dom";
+import Navbar from "../../components/Navbar";
 import "./Profile.css";
-import { useNavigate, useLocation } from "react-router-dom";
 
 const Profile = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation();
   const [showConfirm, setShowConfirm] = useState(false);
 
   if (!user) {
-    navigate("/", { replace: true });
-    return null;
+    return <Navigate to="/login" replace />;
   }
 
   const handleLogout = () => {
@@ -22,18 +21,7 @@ const Profile = () => {
 
   return (
     <div className="profile-wrap">
-      <nav className="navbar">
-        <div className="navbar-logo">Bright Learning</div>
-        <div className="navbar-links">
-          {location.pathname !== "/" && <button onClick={() => navigate("/")}>Home</button>}
-          {location.pathname !== "/about" && <button onClick={() => navigate("/about")}>About</button>}
-          {location.pathname !== "/courses" && <button onClick={() => navigate("/courses")}>Courses</button>}
-          {location.pathname !== "/contact" && <button onClick={() => navigate("/contact")}>Contact</button>}
-          {location.pathname !== "/profile" && <button onClick={() => navigate("/profile")}>Profile</button>}
-          <button onClick={() => setShowConfirm(true)}>Logout</button>
-        </div>
-      </nav>
-
+      <Navbar />
       <main className="profile-main">
         <h1>Welcome back, {user.fullName} 👋</h1>
         <p className="sub-text">Your personal dashboard</p>
@@ -50,35 +38,16 @@ const Profile = () => {
             <h3>Membership</h3>
             <p>Free Plan</p>
           </div>
-          <div className="profile-card">
-            <h3>Learning Streak</h3>
-            <p>🔥 5 days</p>
-          </div>
-          <div className="profile-card">
-            <h3>Quote of the Day</h3>
-            <p>“Learning never exhausts the mind.” – Leonardo da Vinci</p>
-          </div>
-          <div className="profile-card">
-            <h3>Progress Overview</h3>
-            <p>Coming soon: Track subjects and achievements here.</p>
-          </div>
         </div>
       </main>
-
       <footer className="footer">
         <div className="footer-links">
           <a onClick={() => navigate("/about")} style={{ cursor: "pointer" }}>About</a>
           <a onClick={() => navigate("/courses")} style={{ cursor: "pointer" }}>Courses</a>
           <a onClick={() => navigate("/contact")} style={{ cursor: "pointer" }}>Contact</a>
         </div>
-        <div className="socials">
-          <span role="img" aria-label="website">🌐</span>
-          <span role="img" aria-label="facebook">📘</span>
-          <span role="img" aria-label="twitter">🐦</span>
-        </div>
         <p>© 2025 Bright Learning. All rights reserved.</p>
       </footer>
-
       {showConfirm && (
         <div className="confirm-overlay">
           <div className="confirm-box">

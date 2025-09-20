@@ -17,7 +17,7 @@ const SignUpPage = () => {
 
   const handleChange = (e) => {
     let { name, value } = e.target;
-    if (name === "email") value = value.toLowerCase(); 
+    if (name === "email") value = value.toLowerCase();
     setFormData({ ...formData, [name]: value });
   };
 
@@ -25,40 +25,12 @@ const SignUpPage = () => {
     e.preventDefault();
     setErrorMsg("");
 
-    const { email, password, confirmPassword } = formData;
-
-    if (password !== confirmPassword) {
-      setErrorMsg("Passwords do not match");
-      return;
-    }
-    if (password.length < 6 || password.length > 14) {
-      setErrorMsg("Password must be between 6 and 14 characters");
-      return;
-    }
-    if (!/[A-Z]/.test(password)) {
-      setErrorMsg("Password must contain at least one uppercase letter");
-      return;
-    }
-    if (!/[a-z]/.test(password)) {
-      setErrorMsg("Password must contain at least one lowercase letter");
-      return;
-    }
-    if (!/[0-9]/.test(password)) {
-      setErrorMsg("Password must contain at least one digit");
-      return;
-    }
-    if (email !== email.toLowerCase()) {
-      setErrorMsg("Email must be in lowercase");
-      return;
-    }
-    if (!email.endsWith("@gmail.com")) {
-      setErrorMsg("Email must end with @gmail.com");
-      return;
-    }
-
     try {
       const res = await api.post("/auth/signup", formData);
-      login(res.data.user);
+
+      // Save both user and token
+      login(res.data.user, res.data.token);
+
       setSuccessMsg("Signup successful! Your account has been created.");
       setFormData({ fullName: "", email: "", password: "", confirmPassword: "" });
     } catch (err) {
@@ -80,7 +52,6 @@ const SignUpPage = () => {
     <div className="signup-container">
       <div className="signup-box">
         <h2>Create an Account</h2>
-        <h6>Join Bright Learning and start your journey today.</h6>
         {successMsg ? (
           <div className="notice success">
             <div className="notice-text">{successMsg}</div>
@@ -92,42 +63,15 @@ const SignUpPage = () => {
           <>
             {errorMsg && <div className="notice error">{errorMsg}</div>}
             <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="fullName"
-                placeholder="Full Name"
-                value={formData.fullName}
-                onChange={handleChange}
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirm Password"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                required
-              />
+              <input type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} required />
+              <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required />
+              <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+              <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required />
               <button type="submit" className="signup-btn">Sign Up</button>
             </form>
             <p className="login-link">
-              Already have an account? <button onClick={() => navigate("/login", { state: { from: from || "/" } })}>Log In</button>
+              Already have an account?{" "}
+              <button onClick={() => navigate("/login", { state: { from: from || "/" } })}>Log In</button>
             </p>
           </>
         )}
