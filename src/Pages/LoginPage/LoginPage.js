@@ -20,7 +20,9 @@ const LoginPage = () => {
       const email = e.target.email.value;
       const password = e.target.password.value;
       const res = await api.post("/auth/login", { email, password });
-      login(res.data.user);
+
+      login(res.data.user, res.data.token);
+
       setSuccessMsg(`Welcome, ${res.data.user.fullName}!`);
     } catch (err) {
       setErrorMsg(err.response?.data?.message || "Login failed");
@@ -53,16 +55,14 @@ const LoginPage = () => {
             {errorMsg && <div className="notice error">{errorMsg}</div>}
             <form onSubmit={handleLogin}>
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+              <input type="email" id="email" name="email" required />
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" name="password" placeholder="Enter your password" required />
-              <div className="forgot-password">
-                <a href="/#">Forgot Password?</a>
-              </div>
+              <input type="password" id="password" name="password" required />
               <button type="submit" className="login-button">Login</button>
             </form>
             <p className="signup-link">
-              Don’t have an account? <button onClick={() => navigate("/signup", { state: { from: from || "/" } })}>Sign Up</button>
+              Don’t have an account?{" "}
+              <button onClick={() => navigate("/signup", { state: { from: from || "/" } })}>Sign Up</button>
             </p>
             <button className="home-nav-btn" onClick={() => navigate("/")}>⬅ Back to Home</button>
           </>

@@ -2,21 +2,23 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: navy;
   background-color: white;
-  min-height: 100vh;        
-  display: flex;           
-  flex-direction: column;   
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 .class-container h1 {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: midnightblue;       
+  color: midnightblue;
 }
+
 .dropdown-wrapper {
   display: flex;
   justify-content: flex-start;
-  margin-left: 2rem;           
+  margin-left: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -24,8 +26,9 @@
   position: relative;
   display: inline-block;
 }
+
 .dropdown-toggle {
-  background: linear-gradient(135deg, royalblue, deepskyblue); 
+  background: linear-gradient(135deg, royalblue, deepskyblue);
   color: white;
   border: none;
   border-radius: 50px;
@@ -34,11 +37,11 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  width: 180px; 
+  width: 180px;
 }
 
 .dropdown-toggle:hover {
-  background: black;          
+  background: black;
   color: white;
 }
 
@@ -54,14 +57,16 @@
   width: 180px;
 }
 
-.dropdown.open .dropdown-menu { display: block; }
+.dropdown.open .dropdown-menu {
+  display: block;
+}
 
 .menu-item {
   display: block;
   padding: 0.6rem 1rem;
   border: none;
   background: transparent;
-  color: royalblue;            
+  color: royalblue;
   font-weight: 600;
   cursor: pointer;
   text-align: left;
@@ -69,8 +74,9 @@
   transition: all 0.2s ease-in-out;
   width: 100%;
 }
+
 .menu-item:hover {
-  background: whitesmoke;     
+  background: whitesmoke;
   color: black;
 }
 
@@ -78,7 +84,7 @@
   margin: 1.5rem 0;
   padding: 1rem 1.25rem;
   border-radius: 12px;
-  background: ghostwhite;      
+  background: ghostwhite;
   border: 2px dashed royalblue;
   text-align: center;
 }
@@ -95,14 +101,16 @@
   background: white;
   border-radius: 12px;
   padding: 1.2rem;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   border: 2px solid royalblue;
 }
+
 .card h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -110,8 +118,9 @@
   font-size: 1.1rem;
   font-weight: 700;
 }
+
 .card p {
-  color: slategray;           
+  color: slategray;
   font-size: 0.95rem;
   margin: 0;
   line-height: 1.5;
@@ -126,15 +135,18 @@
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
+
 .courses-footer h4 {
   margin-bottom: 10px;
   color: white;
 }
+
 .courses-footer p {
   margin: 4px 0;
   font-size: 0.9rem;
   color: white;
 }
+
 .papers-dropdown {
   margin-top: 0.5rem;
   display: flex;

@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Navbar from "../../components/Navbar";
 import "./Courses.css";
 
 const data = {
@@ -22,23 +22,14 @@ const data = {
 
 function Courses9to12() {
   const location = useLocation();
-  const navigate = useNavigate();
-  const { user, logout } = useContext(AuthContext);
-
   const [selectedClass, setSelectedClass] = useState("9to10");
   const [open, setOpen] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
 
   useEffect(() => {
     if (location.state?.targetClass) {
       setSelectedClass(location.state.targetClass);
     }
   }, [location.state]);
-
-  const handleLogout = () => {
-    logout();
-    setShowConfirm(false);
-  };
 
   const classLabels = {
     "9to10": "Class 9 – 10",
@@ -47,38 +38,14 @@ function Courses9to12() {
 
   return (
     <div className="class-container">
-      <nav className="navbar">
-        <div className="navbar-logo">Bright Learning</div>
-        <div className="navbar-links">
-          {location.pathname !== "/" && <button onClick={() => navigate("/")}>Home</button>}
-          {location.pathname !== "/about" && <button onClick={() => navigate("/about")}>About</button>}
-          {location.pathname !== "/courses" && <button onClick={() => navigate("/courses")}>Courses</button>}
-          {location.pathname !== "/contact" && <button onClick={() => navigate("/contact")}>Contact</button>}
-          {!user ? (
-            <>
-              <button onClick={() => navigate("/signup", { state: { from: location.pathname } })}>Sign Up</button>
-              <button onClick={() => navigate("/login", { state: { from: location.pathname } })}>Log In</button>
-            </>
-          ) : (
-            <>
-              {location.pathname !== "/profile" && <button onClick={() => navigate("/profile")}>Profile</button>}
-              <button onClick={() => setShowConfirm(true)}>Logout</button>
-            </>
-          )}
-        </div>
-      </nav>
-
+      <Navbar />
       <h1>Course Descriptions (Class 9–12)</h1>
       <div className="dropdown-wrapper">
         <div className={`dropdown ${open ? "open" : ""}`}>
-          <button
-            className="dropdown-toggle"
-            onClick={() => setOpen(v => !v)}
-            aria-expanded={open}
-          >
+          <button className="dropdown-toggle" onClick={() => setOpen(v => !v)} aria-expanded={open}>
             {classLabels[selectedClass]} ▼
           </button>
-          <div className="dropdown-menu" role="menu" aria-label="Choose class">
+          <div className="dropdown-menu" role="menu">
             {Object.keys(classLabels).map(cls => (
               <button
                 key={cls}
@@ -95,12 +62,6 @@ function Courses9to12() {
           </div>
         </div>
       </div>
-
-      <section id="activeClass" className="active-class">
-        <h2>{classLabels[selectedClass]}</h2>
-        <p>Course descriptions for core subjects:</p>
-      </section>
-
       <section className="subjects-grid">
         {Object.entries(data[selectedClass]).map(([subject, desc]) => (
           <div key={subject} className="card">
@@ -119,7 +80,6 @@ function Courses9to12() {
           </div>
         ))}
       </section>
-
       <footer className="courses-footer">
         <div className="footer-content">
           <h4>Bright Learning</h4>
@@ -127,19 +87,6 @@ function Courses9to12() {
           <p>© 2025 Bright Learning. All rights reserved.</p>
         </div>
       </footer>
-
-      {showConfirm && (
-        <div className="confirm-overlay">
-          <div className="confirm-box">
-            <h3>Confirm Logout</h3>
-            <p>Are you sure you want to logout?</p>
-            <div className="confirm-actions">
-              <button className="cancel-btn" onClick={() => setShowConfirm(false)}>Cancel</button>
-              <button className="logout-btn" onClick={handleLogout}>Logout</button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
