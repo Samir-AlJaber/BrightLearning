@@ -1,59 +1,25 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import Navbar from "../../components/Navbar";
 import "./HomePage.css";
 
 const HomePage = () => {
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, logout } = useContext(AuthContext);
-  const [showConfirm, setShowConfirm] = useState(false);
-
-  const handleLogout = () => {
-    logout();
-    setShowConfirm(false);
-  };
 
   return (
     <div className="main">
-      <nav className="navbar">
-        <div className="navbar-logo">Bright Learning</div>
-        <div className="class-btn1">
-          {location.pathname !== "/" && <button onClick={() => navigate("/")}>Home</button>}
-          {location.pathname !== "/about" && <button onClick={() => navigate("/about")}>About</button>}
-          {location.pathname !== "/courses" && <button onClick={() => navigate("/courses")}>Courses</button>}
-          {location.pathname !== "/contact" && <button onClick={() => navigate("/contact")}>Contact</button>}
-          {!user ? (
-            <>
-              <button onClick={() => navigate("/signup", { state: { from: location.pathname } })}>Sign Up</button>
-              <button onClick={() => navigate("/login", { state: { from: location.pathname } })}>Log In</button>
-            </>
-          ) : (
-            <>
-              {location.pathname !== "/profile" && <button onClick={() => navigate("/profile")}>Profile</button>}
-              <button onClick={() => setShowConfirm(true)}>Logout</button>
-            </>
-          )}
-        </div>
-      </nav>
-
+      <Navbar />
       <section className="style">
         <h1>Bright Learning – Guidance for Students</h1>
         <p>Discover tailored lessons for your classes and empower your academic journey with expert resources.</p>
         <div className="class-btn">
-          <button
-            onClick={() => navigate("/courses", { state: { targetClass: "9to10" } })}
-          >
-            Class 9–10
-          </button>
-          <button
-            onClick={() => navigate("/courses", { state: { targetClass: "11to12" } })}
-          >
-            Class 11–12
-          </button>
+          <button onClick={() => navigate("/courses", { state: { targetClass: "9to10" } })}>Class 9–10</button>
+          <button onClick={() => navigate("/courses", { state: { targetClass: "11to12" } })}>Class 11–12</button>
         </div>
       </section>
-
       <section className="topics">
         <h2>Courses & Topics</h2>
         <h3>Start your journey, strengthen your foundation</h3>
@@ -73,14 +39,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
       <section className="final-btn">
         <h2>{user ? "Continue Your Learning" : "Ready to Expand Your Learning?"}</h2>
-        <h4>
-          {user
-            ? "Browse courses and keep improving your knowledge."
-            : "Join Bright Learning today and unlock a world of knowledge."}
-        </h4>
+        <h4>{user ? "Browse courses and keep improving your knowledge." : "Join Bright Learning today and unlock a world of knowledge."}</h4>
         <button
           className="start-btn"
           onClick={() =>
@@ -92,7 +53,6 @@ const HomePage = () => {
           {user ? "Browse Courses 📚" : "Start Now 🚀"}
         </button>
       </section>
-
       <footer className="footer">
         <div className="footer-links">
           <a onClick={() => navigate("/about")} style={{ cursor: "pointer" }}>About</a>
@@ -106,19 +66,6 @@ const HomePage = () => {
         </div>
         <p>© 2025 Bright Learning. All rights reserved.</p>
       </footer>
-
-      {showConfirm && (
-        <div className="confirm-overlay">
-          <div className="confirm-box">
-            <h3>Confirm Logout</h3>
-            <p>Are you sure you want to logout?</p>
-            <div className="confirm-actions">
-              <button className="cancel-btn" onClick={() => setShowConfirm(false)}>Cancel</button>
-              <button className="logout-btn" onClick={handleLogout}>Logout</button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
