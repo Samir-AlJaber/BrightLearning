@@ -16,7 +16,6 @@ const Profile = () => {
   const handleLogout = () => {
     logout();
     setShowConfirm(false);
-    navigate("/", { replace: true });
   };
 
   return (

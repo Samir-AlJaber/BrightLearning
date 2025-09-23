@@ -5,14 +5,13 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
-  const [showConfirm, setShowConfirm] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const handleLogout = () => {
     logout();
     setShowConfirm(false);
-    navigate("/", { replace: true });
   };
 
   return (
@@ -23,7 +22,6 @@ const Navbar = () => {
         {location.pathname !== "/about" && <button onClick={() => navigate("/about")}>About</button>}
         {location.pathname !== "/courses" && <button onClick={() => navigate("/courses")}>Courses</button>}
         {location.pathname !== "/contact" && <button onClick={() => navigate("/contact")}>Contact</button>}
-
         {!user ? (
           <>
             <button onClick={() => navigate("/signup", { state: { from: location.pathname } })}>Sign Up</button>
@@ -36,7 +34,6 @@ const Navbar = () => {
           </>
         )}
       </div>
-
       {showConfirm && (
         <div className="confirm-overlay">
           <div className="confirm-box">
